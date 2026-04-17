@@ -25,6 +25,8 @@ command_args="app.js"
 supervise_daemon_args=" -d /opt/mcsmanager/daemon -e "PATH=\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"\""
 command_user="root"
 pidfile="/var/run/mcsmd.pid"
+output_log="/var/log/mcsm/daemon.log"
+error_log="/var/log/mcsm/daemon.err"
 
 reload() {
 	ebegin "Reloading $RC_SVCNAME"
@@ -46,6 +48,8 @@ command_args="app.js"
 supervise_daemon_args=" -d /opt/mcsmanager/web -e "PATH=\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"\""
 command_user="root"
 pidfile="/var/run/mcsmw.pid"
+output_log="/var/log/mcsm/web.log"
+error_log="/var/log/mcsm/web.err"
 
 reload() {
 	ebegin "Reloading $RC_SVCNAME"
